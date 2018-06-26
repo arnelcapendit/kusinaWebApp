@@ -1,0 +1,10 @@
+.privacy-container{
+    padding:20px;
+    clear: both;
+}
+.privacy-container button{
+    float:right;
+}
+.privacy-container h2{
+    margin-top:0;
+}

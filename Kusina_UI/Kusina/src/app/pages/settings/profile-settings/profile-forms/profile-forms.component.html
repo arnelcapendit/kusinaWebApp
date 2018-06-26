@@ -1,0 +1,47 @@
+<div *ngIf="isShow">
+  <div class="cards-container custom-report-container myte-custom-report" fxLayout="column" fxLayoutGap="15px" >
+      <div class="card" fxFlex="60%" fxLayout="column" >
+          <div class="container col-md-12">
+              <div class="dafaultFont">
+                  <mat-toolbar color="primary"><p>{{catName}}</p><a (click)="onClosed()"><i class="fa fa-window-close"></i></a></mat-toolbar>
+                  <div class="content_dialog_container">
+                      <form class="profile-form" [formGroup] ="profileForm" (ngSubmit)="submitForm(profileForm.value)" #formDir="ngForm" novalidate >
+                          <mat-form-field appearance="outline" class="profile-full-width">
+                            <input matInput placeholder="App Name" formControlName="app_name" required>
+                            <mat-error align="end" *ngIf="profileForm.controls['app_name']?.invalid && profileForm.controls['app_name']?.errors.required">{{errors.app_name.REQUIRED}}</mat-error>
+                          </mat-form-field>
+
+                          <mat-form-field appearance="outline" class="profile-full-width">
+                            <input matInput placeholder="AirId" formControlName="airid" required>
+                            <mat-error align="end" *ngIf="profileForm.controls['airid']?.invalid && profileForm.controls['airid']?.errors.required">{{errors.airid.REQUIRED}}</mat-error>
+                          </mat-form-field>
+
+                          <mat-form-field appearance="outline" class="profile-full-width">
+                            <input matInput placeholder="Site Id" formControlName="site_id" required>
+                            <mat-error align="end" *ngIf="profileForm.controls['site_id']?.invalid && profileForm.controls['site_id']?.errors.required">{{errors.site_id.REQUIRED}}</mat-error>
+                          </mat-form-field>
+                          
+                          <button mat-raised-button color="primary" [disabled]="profileForm.invalid  && formDir.submitted">Submit</button>
+                        </form>
+                  </div>
+              </div>
+          </div>  
+      </div>
+    </div>
+</div>
+<div *ngIf="!isShow">
+  <div class="cards-container custom-report-container myte-custom-report" fxLayout="column" fxLayoutGap="15px" >
+    <div class="card" fxFlex="60%" fxLayout="column" >
+        <div class="container col-md-12">
+            <div class="dafaultFont">
+                <mat-toolbar color="primary"><p>{{catName}}</p><a (click)="onClosed()"><i class="fa fa-window-close"></i></a></mat-toolbar>
+                <div class="content_dialog_container">
+                  <h4>Do you want to delete this item?</h4>
+                  <button mat-raised-button (click)="deleteData()" color="warn">Delete</button>
+                  <button mat-raised-button (click)="onClosed()">Cancel</button>
+                </div>
+            </div>
+        </div>  
+    </div>
+  </div>
+</div>

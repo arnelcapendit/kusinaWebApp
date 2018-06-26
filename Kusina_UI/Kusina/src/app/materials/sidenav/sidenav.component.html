@@ -1,0 +1,46 @@
+<div #temporaryContainer></div>
+<mat-sidenav-container class="app-container" (backdropClick)="removePreview()" >
+<mat-sidenav #sidenav mode="over" position="end" class="app-sidenav">
+    <div class="sidenav-navigation" *ngIf="action==='navigation'">
+        <div class="user-info">
+            <fa class="user-image" name="user-circle"></fa>
+            <app-sidenav-display-name #displayName></app-sidenav-display-name>
+        </div>
+        <mat-divider></mat-divider>
+        <mat-list class="sidenave-items">
+            <mat-list-item (click)="onlickItem()" mat-button routerLink="dashboard" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Dashboard</mat-list-item>
+        </mat-list>
+        <mat-divider color="primary"></mat-divider>
+        <mat-list class="sidenave-items">
+            <mat-list-item (click)="onlickItem()" mat-button routerLink="custom" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Custom Report</mat-list-item>
+        </mat-list>
+        <mat-divider color="primary"></mat-divider>
+        <mat-list class="sidenave-items">
+            <mat-list-item (click)="onlickItem()" mat-button routerLink="announcements" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Announcements</mat-list-item>
+        </mat-list>
+        <mat-divider color="primary"></mat-divider>
+        <mat-list class="sidenave-items">
+            <mat-list-item (click)="onlickItem()" *ngIf="isAdmin()" mat-button routerLink="settings" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Settings</mat-list-item>
+        </mat-list>
+        <mat-divider color="primary"></mat-divider>
+    </div>
+    <div class="sidenav-feedback" *ngIf="action==='feedback'">
+      <app-feedback></app-feedback>
+    </div>
+    <div class="sidenav-announcement" *ngIf="action==='announcement'">
+      <app-announcement></app-announcement>
+    </div>
+    <div class="sidenav-configureVisualization" *ngIf="action==='configureVisualization'">
+        <app-visualization-configure></app-visualization-configure>
+    </div>
+    <div class="sidenav-addVisualization" *ngIf="action==='addVisualization'">
+        <app-visualization-add #addVisualization [visualization]="'home'"></app-visualization-add>
+    </div>
+</mat-sidenav>
+<div class="sidenav-content" #parentContainer>
+    <app-navbar #toolbar [hidden]="customNav()"></app-navbar>
+    <router-outlet></router-outlet>
+</div>
+</mat-sidenav-container>
+<!-- 
+    </mat-sidenav-container> -->

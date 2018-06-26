@@ -1,0 +1,10 @@
+<div class="cards-container custom-report-container myte-custom-report" fxLayout="column" fxLayoutGap="15px" >
+    <div class="card" fxFlex="60%" fxLayout="column" >
+        <app-loader></app-loader>
+        <mat-tab-group #tabGroup (selectedTabChange)="tabChanged($event)">
+            <mat-tab label="EVENT ACTIONS">
+                        <app-event-actionmetrics *ngIf="tabGroup.selectedIndex === 0"></app-event-actionmetrics>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

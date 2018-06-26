@@ -1,0 +1,53 @@
+<!-- <div class="feedback-icon-holder">
+  <a class="feedback" (click)="toggleClick()">
+    <i class="fa fa-comments"></i>
+  </a>
+</div> -->
+
+<div class="feedback-container">
+    <div class="feedback-header">
+      <h4>Leave Feedback</h4>
+    </div>
+    <div class="feedback-content">
+      <form [formGroup] ="giveFeedbackForm" (ngSubmit)="sendFeedback(giveFeedbackForm.value)" #formDir="ngForm" novalidate>
+          <mat-form-field class="w100" color="primary">
+              <mat-select placeholder="Select a module" formControlName="module" required>
+                  <mat-option>--</mat-option>
+                  <mat-option value="General">General</mat-option>
+                  <mat-option value="Dashboard">Dashboard</mat-option>
+                  <mat-option value="Custom Report">Custom Report</mat-option>
+              </mat-select>
+              <mat-error align="end" *ngIf="giveFeedbackForm.controls['module']?.invalid">
+                  <mat-error *ngIf="giveFeedbackForm.controls['module']?.errors.required">{{errors.module.REQUIRED}}</mat-error>
+              </mat-error>
+            </mat-form-field>
+          <div class="star-rating-container">
+              <cli-star-rating 
+                  [starReadonly]="false" 
+                  [rating]="0"
+                  (onStarRate)="getRateValue($event[0])">
+              </cli-star-rating>
+          </div>
+          <mat-form-field class="w100" color="primary">
+              <textarea matInput 
+                        placeholder="Leave a comment" 
+                        matTextareaAutosize 
+                        matAutosizeMinRows="10"
+                        matAutosizeMaxRows="10"
+                        formControlName="comment"
+                        #input 
+                        maxlength="2000"
+                        style="font-size: 12px"
+                        required></textarea>
+              <mat-hint align="end">{{input.value?.length || 0}}/2000</mat-hint>
+              <mat-error align="end" *ngIf="giveFeedbackForm.controls['comment']?.invalid">
+                  <mat-error *ngIf="giveFeedbackForm.controls['comment']?.errors.required">{{errors.comment.REQUIRED}}</mat-error>
+                  <mat-error *ngIf="giveFeedbackForm.controls['comment']?.errors.pattern">{{errors.comment.PATTERN}}</mat-error>  
+              </mat-error>
+          </mat-form-field>
+          <div class="action-btn-holder">
+                <button mat-raised-button color="primary" [disabled]="giveFeedbackForm.invalid  && formDir.submitted">Submit</button>
+          </div>
+      </form>
+    </div>
+</div>

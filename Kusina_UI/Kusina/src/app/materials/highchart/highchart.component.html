@@ -1,0 +1,8 @@
+<div *ngIf="dataArray === null || (dataArray && dataArray.length === 0); else chartData">
+  <div class="nodataLbl">  No data available  </div>
+  <div [chart]="dataChart" >  </div>
+</div>
+
+<ng-template #chartData >
+  <div [chart]="dataChart"> </div>
+</ng-template>

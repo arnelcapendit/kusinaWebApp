@@ -1,0 +1,12 @@
+<div class="k-card-form-container k-metrics">
+    <mat-list dense>
+        <mat-list-item [style.height]="'auto'"> 
+          <label matLine>Markdown Content</label>
+          <mat-form-field matLine class="card-content-value">
+              <textarea matInput placeholder="Type a value" [(ngModel)]="parameter.content" (ngModelChange)="refreshPreview($event)"></textarea>
+          </mat-form-field>
+        </mat-list-item> 
+    </mat-list>
+    <button (click)="add()">Add</button>
+</div>
+

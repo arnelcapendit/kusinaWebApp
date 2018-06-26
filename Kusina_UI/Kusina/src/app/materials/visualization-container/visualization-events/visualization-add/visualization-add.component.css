@@ -1,0 +1,30 @@
+.k-addComponent-container{
+    width:300px;
+}
+mat-list.k-list-container{
+    padding:0 !important;
+}
+.k-list-header{
+    cursor:default;
+    font-size: 14px;
+    font-weight: bold;
+    background-color:#111;
+    color: #fff;
+    font-family: "Open Sans Regular";
+}
+.k-list-header:hover{
+    background-color:#111;
+}
+
+.k-list-header h3{
+    display:inline-block;
+}
+.k-backToHome{
+    font-size: 20px;
+    width:20px;
+
+}
+.k-backToHome:hover{
+    background-color:#555;
+    cursor: pointer;
+}

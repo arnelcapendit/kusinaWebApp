@@ -1,0 +1,6 @@
+<div class="card-container">
+    <div [ngStyle]="data.style">{{data.value}}</div>
+    <div *ngFor="let child of data.children" [ngStyle]="child.style">
+        {{ child.value }}
+    </div>
+</div>

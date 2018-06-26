@@ -1,0 +1,106 @@
+<div *ngIf="isShow">
+  <div class="cards-container custom-report-container myte-custom-report" fxLayout="column" fxLayoutGap="15px" >
+      <div class="card" fxFlex="60%" fxLayout="column" >
+          <div class="container col-md-12">
+              <div class="dafaultFont">
+                  <mat-toolbar color="primary"><p>{{catName}}</p><a (click)="onClosed()"><i class="fa fa-window-close"></i></a></mat-toolbar>
+                  <div class="content_dialog_container">
+                      <form class="user-form" [formGroup] ="userForm" (ngSubmit)="submitForm(userForm.value)" #formDir="ngForm" novalidate >
+                          <mat-form-field appearance="outline" class="user-full-width">
+                            <input matInput placeholder="User EID" formControlName="eid" required>
+                            <mat-error align="end" *ngIf="userForm.controls['eid']?.invalid && userForm.controls['eid']?.errors.required">{{errors.eid.REQUIRED}}</mat-error>
+                          </mat-form-field>
+
+                          <mat-form-field class="user-full-width">
+                            <mat-select placeholder="Type" formControlName="access" (change)="changeAccess($event.value)" required>
+                              <mat-option *ngFor="let access of accesses" [value]="access.value">
+                                {{ access.viewValue }}
+                              </mat-option>
+                            </mat-select>
+                            <mat-error align="end" *ngIf="userForm.controls['access']?.invalid && userForm.controls['access']?.errors.required">{{errors.access.REQUIRED}}</mat-error>
+                          </mat-form-field>
+
+                          <mat-form-field appearance="outline" class="user-full-width" *ngIf="showTeam">
+                            <input matInput placeholder="Team" formControlName="team" required>
+                            <mat-error align="end" *ngIf="userForm.controls['team']?.invalid && userForm.controls['team']?.errors.required">{{errors.team.REQUIRED}}</mat-error>
+                          </mat-form-field>
+                          
+                          <mat-form-field appearance="outline" class="user-full-width" *ngIf="showAirID">
+                            <input matInput placeholder="User AIRID" formControlName="airid" required>
+                            <mat-error align="end" *ngIf="userForm.controls['airid']?.invalid && userForm.controls['airid']?.errors.required">{{errors.airid.REQUIRED}}</mat-error>
+                          </mat-form-field>
+
+                          <mat-form-field appearance="outline" class="user-full-width" *ngIf="showAirID">
+                            <input matInput placeholder="Site ID" formControlName="site_id" required>
+                            <mat-error align="end" *ngIf="userForm.controls['site_id']?.invalid && userForm.controls['site_id']?.errors.required">{{errors.site_id.REQUIRED}}</mat-error>
+                          </mat-form-field>
+
+                          <!-- <mat-form-field class="user-full-width">
+                            <mat-select placeholder="User AIRID" formControlName="airid" (change)="getSiteId($event.value)" multiple>
+                              <mat-select-trigger>
+                                {{airid.value ? airid.value[0] : ''}}
+                                <span *ngIf="airid.value?.length > 1" class="example-additional-selection">
+                                  (+{{airid.value.length - 1}} others)
+                                </span>
+                              </mat-select-trigger>
+                              <mat-form-field class="padding-15 table-tools md-toolbar-tools">
+                                  <input matInput placeholder="Search" [(ngModel)]="searchText" [ngModelOptions]="{standalone: true}">
+                              </mat-form-field>
+                              <mat-option *ngFor="let userAirid of userAiridList | filter : searchText : airid.value" [value]="userAirid.AIRID">{{userAirid.AIRID}}</mat-option>
+                            </mat-select>
+                            <mat-error align="end" *ngIf="userForm.controls['airid']?.invalid && userForm.controls['airid']?.errors.required">{{errors.airid.REQUIRED}}</mat-error>
+                          </mat-form-field>
+
+                          <mat-form-field class="user-full-width">
+                            <mat-select placeholder="Site ID" formControlName="site_id" multiple>
+                              <mat-select-trigger>
+                                {{site_id.value ? site_id.value[0] : ''}}
+                                <span *ngIf="site_id.value?.length > 1" class="example-additional-selection">
+                                  (+{{site_id.value.length - 1}} others)
+                                </span>
+                              </mat-select-trigger>
+                              <mat-option *ngFor="let siteId of siteIdList" [value]="siteId.SITE_ID">{{siteId.SITE_ID}}</mat-option>
+                            </mat-select>
+                            <mat-error align="end" *ngIf="userForm.controls['site_id']?.invalid && userForm.controls['site_id']?.errors.required">{{errors.site_id.REQUIRED}}</mat-error>
+                          </mat-form-field> -->
+
+                          <mat-form-field class="user-full-width">
+                            <mat-select placeholder="Status" formControlName="status" required>
+                              <mat-option *ngFor="let s of stat" [value]="s.value">
+                                {{ s.viewValue }}
+                              </mat-option>
+                            </mat-select>
+                            <mat-error align="end" *ngIf="userForm.controls['status']?.invalid && userForm.controls['status']?.errors.required">{{errors.status.REQUIRED}}</mat-error>
+                          </mat-form-field>
+                      
+                          <mat-form-field class="user-full-width">
+                            <input matInput [matDatepicker]="picker" placeholder="Expiration Date" formControlName="expiredDate" required readonly>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                            <mat-error align="end" *ngIf="userForm.controls['expiredDate']?.invalid && userForm.controls['expiredDate']?.errors.required">{{errors.expiredDate.REQUIRED}}</mat-error>
+                          </mat-form-field>
+                          
+                          <button mat-raised-button color="primary" [disabled]="userForm.invalid  && formDir.submitted">Submit</button>
+                        </form>
+                  </div>
+              </div>
+          </div>  
+      </div>
+    </div>
+</div>
+<div *ngIf="!isShow">
+  <div class="cards-container custom-report-container myte-custom-report" fxLayout="column" fxLayoutGap="15px" >
+    <div class="card" fxFlex="60%" fxLayout="column" >
+        <div class="container col-md-12">
+            <div class="dafaultFont">
+                <mat-toolbar color="primary"><p>{{catName}}</p><a (click)="onClosed()"><i class="fa fa-window-close"></i></a></mat-toolbar>
+                <div class="content_dialog_container">
+                  <h4>Are you sure you want to remove this user: <strong>{{data.EID}}</strong>?</h4>
+                  <button mat-raised-button (click)="deleteData()" color="warn">Delete</button>
+                  <button mat-raised-button (click)="onClosed()">Cancel</button>
+                </div>
+            </div>
+        </div>  
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+
+  
+  mat-toolbar {
+    
+    display: block;
+  }
+  
+  mat-toolbar a {
+    float: right;
+    font-size: 25px;
+    padding-top: 8px;
+    display: block;
+    cursor: pointer;
+  }
+  
+  mat-toolbar p {
+    float: left;
+    margin: 10px 0 0;
+  
+  }
+
+  .cards-container{
+    display: block !important;
+  }
+  
+  .content_dialog_container {
+    padding: 24px;
+  }
+  

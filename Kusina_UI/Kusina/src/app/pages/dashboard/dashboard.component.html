@@ -1,0 +1,37 @@
+<div class="load-wrappper">
+<div *ngIf="getIsShowLoader()" class="loader" fxLayout="row" fxLayoutGap="5px">
+    <mat-progress-bar
+        [color]="color"
+        [mode]="mode"
+        [value]="value"
+        [bufferValue]="bufferValue">
+    </mat-progress-bar>
+</div>
+</div>
+
+<div  class="cards-container" fxLayout="column" fxLayoutGap="15px" >
+    <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="2%" >
+        <div class="card" fxFlex="60%" fxLayout="column" >
+            <app-highchart #visitsOverTime></app-highchart>
+          </div>
+          <div fxFlex="34%" fxLayout="column" >
+            <app-metric #metric></app-metric>
+          </div>
+    </div>
+    <div class="containers" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="2%" >
+        <div class="card" fxFlex="47%">
+          <app-highchart #topPages></app-highchart>
+        </div>
+        <div class="card" fxFlex="47%">
+          <app-highchart #visitLocation></app-highchart>
+        </div>
+    </div>          
+    <div class="containers"  fxLayout="row"  fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="2%">
+        <div class="card" fxFlex="47%">
+            <app-highchart #browserType></app-highchart>
+         </div>
+         <div class="card"fxFlex="47%">
+            <app-highchart #deviceType></app-highchart>
+         </div> 
+    </div>
+</div>

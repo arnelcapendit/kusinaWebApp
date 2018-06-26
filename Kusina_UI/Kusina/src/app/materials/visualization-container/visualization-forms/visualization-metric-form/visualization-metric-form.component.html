@@ -1,0 +1,81 @@
+<div class="k-metrics">
+    <mat-list dense>
+        <mat-list-item> 
+            <mat-form-field matLine>
+                <input matInput placeholder="Type a metric title" [(ngModel)]="parameter.title" (change)="refreshPreview($event)">
+            </mat-form-field>
+        </mat-list-item>
+        <mat-list-item>
+                <mat-form-field matLine>  
+                    <mat-select placeholder="Select a query" [(value)]="parameter.value" (change)="refreshPreview($event)">
+                      <mat-option value="1">Query 1</mat-option>
+                      <mat-option value="2">Query 2</mat-option>
+                      <mat-option value="3">Query 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+        </mat-list-item>
+        <mat-list-item> 
+                <mat-form-field matLine>
+                    <input matInput placeholder="Type a subtitle" [(ngModel)]="parameter.subtitle" (change)="refreshPreview($event)">
+                </mat-form-field>
+        </mat-list-item>
+        <mat-list-item [style.height]="'auto'">
+                <label matLine> Foreground Color</label>
+                <input matLine class="k-colorPicker" [value]="parameter.foreground" [(colorPicker)]="parameter.foreground" [style.background]="parameter.foreground" [cpPositionOffset]="'0%'" [cpPosition]="'bottom'" [cpWidth]="'190px'" (colorPickerChange)="refreshPreview($event)" (cpFallbackColor)="'#000000'"/>
+        </mat-list-item>
+        <mat-list-item [style.height]="'auto'">
+                <label matLine> Background Color</label>
+                <input matLine class="k-colorPicker" [value]="parameter.background" [(colorPicker)]="parameter.background" [style.background]="parameter.background" [cpPositionOffset]="'0%'" [cpPosition]="'bottom'" [cpWidth]="'190px'" (colorPickerChange)="refreshPreview($event)" (cpFallbackColor)="'#ffffff'"/>
+        </mat-list-item>
+        <mat-list-item class="k-conditionalFormatingContainer" [style.height]="'auto'"> 
+                <label matLine> CONDITIONAL FORMATTING</label>
+        </mat-list-item>
+        <mat-list-item class="k-conditionalFormatingContainer" [style.height]="'auto'"> 
+                <app-conditional-formatting *ngFor="let child of parameter.conditions" [data]="child" (onFormChanged)="refreshPreview($event)" (onDeleteItem)="removeCondition($event)"></app-conditional-formatting>
+        </mat-list-item>
+        <mat-list-item class="k-conditionalFormatingContainer" [style.height]="'auto'">
+                <label matLine class="k-addRule" (click)="addRule()"><fa name="plus" ></fa>Add Rule</label>
+        </mat-list-item>
+        <mat-list-item> 
+                <button (click)="add()">Add</button>
+        </mat-list-item>
+    </mat-list>
+</div>
+
+<!-- <div class="k-metrics">
+<mat-list dense>
+    <mat-list-item> 
+        <mat-form-field>
+            <input matInput placeholder="Type a metric title" [(ngModel)]="parameter.title" (change)="refreshPreview($event)">
+        </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+        <mat-form-field>
+            <mat-select placeholder="Select a query" [(value)]="parameter.value" (change)="refreshPreview($event)">
+              <mat-option value="1">Query 1</mat-option>
+              <mat-option value="2">Query 2</mat-option>
+              <mat-option value="3">Query 3</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </mat-list-item>
+    <mat-list-item> 
+        <mat-form-field>
+            <input matInput placeholder="Type a subtitle" [(ngModel)]="parameter.subtitle" (change)="refreshPreview($event)">
+        </mat-form-field>
+    </mat-list-item>
+    <mat-list-item [style.height]="'auto'">
+        <label matLine> Foreground Color</label>
+        <input matLine class="k-colorPicker" [value]="parameter.foreground" [(colorPicker)]="parameter.foreground" [style.background]="parameter.foreground" [cpPositionOffset]="'0%'" [cpPosition]="'bottom'" [cpWidth]="'190px'" (colorPickerChange)="refreshPreview($event)" (cpFallbackColor)="'#000000'"/>
+        <label matLine> Background Color</label>
+        <input matLine class="k-colorPicker" [value]="parameter.background" [(colorPicker)]="parameter.background" [style.background]="parameter.background" [cpPositionOffset]="'0%'" [cpPosition]="'bottom'" [cpWidth]="'190px'" (colorPickerChange)="refreshPreview($event)" (cpFallbackColor)="'#ffffff'"/>
+    </mat-list-item>
+    <mat-list-item class="k-conditionalFormatingContainer" [style.height]="'auto'"> 
+        <label matLine> CONDITIONAL FORMATTING</label>
+        <app-conditional-formatting *ngFor="let child of parameter.conditions" [data]="child" (onFormChanged)="refreshPreview($event)"></app-conditional-formatting>
+        <label matLine class="k-addRule" (click)="addRule()"><fa name="plus" ></fa>Add Rule</label>
+    </mat-list-item>
+    <mat-list-item> 
+        <button (click)="add()">Add</button>
+    </mat-list-item>
+</mat-list>
+</div> -->

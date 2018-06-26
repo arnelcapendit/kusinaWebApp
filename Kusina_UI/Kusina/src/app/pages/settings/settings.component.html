@@ -1,0 +1,18 @@
+<div class="cards-container custom-report-container myte-custom-report" fxLayout="column" fxLayoutGap="15px" >
+    <div class="card" fxFlex="60%" fxLayout="column" >
+        <mat-tab-group #tabGroup (selectedTabChange)="tabChanged($event)">
+            <mat-tab label="APP PROFILES">
+                <app-profile-settings *ngIf="tabGroup.selectedIndex === 0"></app-profile-settings>
+            </mat-tab>
+            <mat-tab label="USER ACCESS">
+                <app-user-access *ngIf="tabGroup.selectedIndex === 1"></app-user-access>
+            </mat-tab>
+            <mat-tab label="FEEDBACKS">
+                <app-feedbacks *ngIf="tabGroup.selectedIndex === 2"></app-feedbacks>
+            </mat-tab>
+            <mat-tab label="ANNOUNCEMENTS">
+                <app-announcement-settings *ngIf="tabGroup.selectedIndex === 3"></app-announcement-settings>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

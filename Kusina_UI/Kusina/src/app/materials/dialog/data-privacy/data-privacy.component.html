@@ -1,0 +1,10 @@
+<div class="privacy-container">
+  <h2>Privacy Statement</h2>
+  <p>Please be aware that any personal Data that you and others provide through this tool may be processed by Accenture.</p>
+  <p>The protection of your personal data is very important to Accenture. Accenture is committed to keeping your personal data secure, and processing it in accordance with applicable data protection laws and our internal policies, including <a href="https://policies.accenture.com/Pages/0001-0100/0090.aspx?rd=1&Country=United+Kingdom" target="_blank">Accenture's Global Data Privacy Policy 0090</a>.</p>
+  <p>Your decision to provide your personal data to Accenture is voluntary. However, given that this tool requires personal data to function, you will not be able to use this tool if you do not provide your personal data.</p>
+  <p>Before providing any personal data through this tool, Accenture invites you to carefully read its <a href="https://in.accenture.com/protectingaccenture/data-security/5422-2/" target="_blank">privacy statement</a>, which includes important information on why and how Accenture is processing your personal data.</p>
+  <p>If you feel that an actual or suspected information security breach occured, you may check the <a href="https://in.accenture.com/protectingaccenture/home/protecting-accenture-contacts/" targ="_blank">Accenture guidelines</a>.</p>
+  <mat-checkbox [(ngModel)]="selection">I acknowledge the data privacy policy</mat-checkbox>
+  <button mat-raised-button color="warn" [disabled]="!selection" (click)="confirmed($event)">Continue</button>
+</div>

@@ -1,0 +1,153 @@
+<div class="custom-container mat-elevation-z8" >
+    <div class="table-tools md-toolbar-tools" >
+        <div class="table-filter clearfix">
+            <mat-form-field  color="accent"  style="float:left">
+                <input matInput #filter placeholder="Search by {{searchPlaceholder}}" value="">
+                <span matPrefix>
+                    <!-- <fa name="search" class="filter-icon profile-search-icon"></fa> -->
+                    <span class="filter-icon profile-search-icon"><i class="fa fa-search"></i></span>
+                    &nbsp;
+                </span>
+            </mat-form-field>
+        </div>
+        <div class="table-actions">
+            <app-download-report *ngIf="isExportTable" [report]="currentReport" [count]="dataSource.dataLength" [reportType]="reporttype" [filterData]="filterData"></app-download-report>
+        </div>
+        <div class="add-user">
+            <button mat-raised-button color="primary" *ngIf="isUserAccess" (click)="userForm('add-user', 'null')">
+                <i class="fa fa-user-plus"></i>
+                Add New User
+            </button>
+        </div>
+        <div class="add-user">
+            <button mat-raised-button color="primary" *ngIf="isUserAccessAnnouncement" (click)="announcementForm('add-announcement', 'null')">
+                <i class="fa fa-plus"></i>
+                Add New Announcement
+            </button>
+        </div>
+        <div class="add-user">
+            <button mat-raised-button color="primary" *ngIf="isUserAccessProfile" (click)="profileForm('add-profile', 'null')">
+                <i class="fa fa-plus"></i>
+                Add New App Profile
+            </button>
+        </div>
+        <div class="tooltip">
+            <span 
+                matTooltip="Clicking on table headers would only sort the data by page." 
+                matTooltipPosition="left">
+                <i class="fa fa-info-circle"></i>
+            </span>
+        </div>
+    </div>
+    
+    <mat-table #table [dataSource]="dataSource" class="custom-table" matSort>
+        <ng-container *ngFor="let col of displayedColumns; let isFirst = first" [ngSwitch]="col"  matColumnDef={{col}}>
+            <div *ngSwitchCase="'VIEW_USER'">
+                <mat-header-cell *matHeaderCellDef mat-sort-header disabled = "{{isFirst}}">{{col | changeToSpace}}</mat-header-cell>
+            </div>
+            <div *ngSwitchCase="'VIEW_CAREER_LEVEL'">
+                <mat-header-cell *matHeaderCellDef mat-sort-header disabled = "{{isFirst}}">{{col | changeToSpace}}</mat-header-cell>
+            </div>
+            <div *ngSwitchCase="'VIEW_CAREER_TRACKS'">
+                <mat-header-cell *matHeaderCellDef mat-sort-header disabled = "{{isFirst}}">{{col | changeToSpace}}</mat-header-cell>
+            </div>
+            <div *ngSwitchCase="'VIEW_GEOGRAPHY'">
+                <mat-header-cell *matHeaderCellDef mat-sort-header disabled = "{{isFirst}}">{{col | changeToSpace}}</mat-header-cell>
+            </div>
+            <div *ngSwitchCase="'VIEW_COUNTRY'">
+                <mat-header-cell *matHeaderCellDef mat-sort-header disabled = "{{isFirst}}">{{col | changeToSpace}}</mat-header-cell>
+            </div>
+            <div *ngSwitchCase="'VIEW_LEVEL'">
+                <mat-header-cell *matHeaderCellDef mat-sort-header disabled = "{{isFirst}}">{{col | changeToSpace}}</mat-header-cell>
+            </div>
+            <div *ngSwitchCase="'VIEW_CAREERTRACKS'">
+                <mat-header-cell *matHeaderCellDef mat-sort-header disabled = "{{isFirst}}">{{col | changeToSpace}}</mat-header-cell>
+            </div>
+            <div *ngSwitchCase="'VIEW_ACTION'">
+                <mat-header-cell *matHeaderCellDef mat-sort-header disabled = "{{isFirst}}">{{col | changeToSpace}}</mat-header-cell>
+            </div>
+            <div *ngSwitchCase="'VIEW_USER_NAME'">
+                <mat-header-cell *matHeaderCellDef mat-sort-header disabled = "{{isFirst}}">{{col | changeToSpace}}</mat-header-cell>
+            </div>
+                            
+                        
+            <div>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>{{col | changeToSpace}}</mat-header-cell>
+            </div>
+            <!-- <mat-header-cell *matHeaderCellDef mat-sort-header>{{col | changeToSpace}}</mat-header-cell> -->
+            <mat-cell *matCellDef="let row">
+                {{ row[col] | convertToTwoDecimal}}
+                <span *ngSwitchCase="'AVG_GENERATION_TIME'"> sec</span>
+                <span *ngSwitchCase="'AVG_VISIT_DURATION'"> sec</span>
+                
+                <button mat-mini-fab color="primary" *ngSwitchCase="'VIEW_USER'" (click)="viewDialog(row.PAGE_URL)" style="margin: 15px;">
+                    <i class="fa fa-plus"></i>
+                </button>
+                <button mat-mini-fab color="primary" *ngSwitchCase="'VIEW_CAREER_LEVEL'" (click)="viewDialog(row.PAGE_URL)" style="margin: 15px;">
+                    <i class="fa fa-plus"></i>
+                </button>
+                <button mat-mini-fab color="primary" *ngSwitchCase="'VIEW_CAREER_TRACKS'" (click)="viewDialog(row.PAGE_URL)" style="margin: 15px;">
+                    <i class="fa fa-plus"></i>
+                </button>
+                <button mat-mini-fab color="primary" *ngSwitchCase="'VIEW_GEOGRAPHY'" (click)="viewDialog(row.PAGE_URL)" style="margin: 15px;">
+                    <i class="fa fa-plus"></i>
+                </button>
+                <button mat-mini-fab color="primary" *ngSwitchCase="'VIEW_COUNTRY'" (click)="viewDialog(row.GEOGRAPHY)" style="margin: 15px;">
+                    <i class="fa fa-plus"></i>
+                </button>
+                <button mat-mini-fab color="primary" *ngSwitchCase="'VIEW_LEVEL'" (click)="viewDialog(row.CAREER_LEVEL_DESCRIPTION)" style="margin: 15px;">
+                    <i class="fa fa-plus"></i>
+                </button>
+                <button mat-mini-fab color="primary" *ngSwitchCase="'VIEW_CAREERTRACKS'" (click)="viewDialog(row.CAREERTRACKS)" style="margin: 15px;">
+                    <i class="fa fa-plus"></i>
+                </button>
+                <button mat-mini-fab color="primary" *ngSwitchCase="'VIEW_ACTION'" (click)="viewDialog(row.VISITS)" style="margin: 15px;">
+                    <i class="fa fa-plus"></i>
+                </button>
+                <button mat-mini-fab color="primary" *ngSwitchCase="'VIEW_USER_NAME'" (click)="viewDialog(row.REFERRER_URL)" style="margin: 15px;">
+                    <i class="fa fa-plus"></i>
+                </button>
+                <button mat-raised-button style="min-width: auto;" color="primary" *ngSwitchCase="'USER_ACTIONS'" (click)="userForm('edit-user', row)">
+                    <i class="fa fa-edit"></i>
+                    <!-- Edit -->
+                </button>
+                <button mat-raised-button style="min-width: auto;" color="warn" *ngSwitchCase="'USER_ACTIONS'" (click)="userForm('delete-user', row)">
+                    <i class="fa fa-trash"></i>
+                    <!-- Delete -->
+                </button>
+
+                <button mat-raised-button style="min-width: auto;" color="primary" *ngSwitchCase="'ACTION'" (click)="announcementForm('edit-announcement', row)">
+                    <i class="fa fa-edit"></i>
+                    <!-- Edit -->
+                </button>
+                <button mat-raised-button style="min-width: auto;" color="warn" *ngSwitchCase="'ACTION'" (click)="announcementForm('delete-announcement', row.ID)">
+                    <i class="fa fa-trash"></i>
+                    <!-- Delete -->
+                </button>
+
+                <button mat-raised-button style="min-width: auto;" color="primary" *ngSwitchCase="'ACTIONS'" (click)="profileForm('edit-profile', row)">
+                    <i class="fa fa-edit"></i>
+                    <!-- Edit -->
+                </button>
+                <button mat-raised-button style="min-width: auto;" color="warn" *ngSwitchCase="'ACTIONS'" (click)="profileForm('delete-profile', row)">
+                    <i class="fa fa-trash"></i>
+                    <!-- Delete -->
+                </button>
+            </mat-cell> 
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <div class="spinner-container" style="margin: 15px auto; width: 100px;" *ngIf="dataSource.loading$ | async">
+        <mat-spinner></mat-spinner>
+    </div>
+    <div class="no-results" [style.display]="dataSource.dataLength == 0 ? '' : 'none'">
+        No data available
+    </div>
+
+    <mat-paginator #paginator 
+        [length]="dataSource.totalData"
+        [pageSize]="10"
+        [pageSizeOptions]="[10, 25, 100]">
+    </mat-paginator> 
+</div>

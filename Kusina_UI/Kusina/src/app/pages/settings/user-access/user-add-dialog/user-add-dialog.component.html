@@ -1,0 +1,96 @@
+<!-- HTML content for adding user details -->
+<div class="insert-form">
+        <form [formGroup] ="addForm" (ngSubmit)="addUser(addForm.value)" #formDir="ngForm" novalidate>
+        <h2 mat-dialog-title>Add New User</h2>
+        <hr>
+        <mat-dialog-content>
+              <div class="example-container">   
+                <mat-form-field>
+                    <input #input matInput placeholder="User Eid" formControlName="EID" style="text-transform: lowercase;">
+                    <mat-hint align="end">{{input.value?.length || 0}}/50</mat-hint>
+                    <mat-error align="end" *ngIf="addForm.controls['EID']?.invalid && (addForm.controls['EID']?.touched || addForm.controls['EID']?.dirty)">
+                        <mat-error *ngIf="addForm.controls['EID']?.errors.required">{{errors.EID.REQUIRED}}</mat-error>
+                        <mat-error *ngIf="addForm.controls['EID']?.errors.minlength">{{errors.EID.MIN}}</mat-error>
+                        <mat-error *ngIf="addForm.controls['EID']?.errors.maxlength">{{errors.EID.MAX}}</mat-error>
+                        <mat-error *ngIf="addForm.controls['EID']?.errors.pattern">{{errors.EID.PATTERN}}</mat-error>
+                        <mat-error *ngIf="addForm.controls['EID']?.errors.sampleBind">{{errors.EID.EXIST}}</mat-error>    
+                    </mat-error>
+                </mat-form-field>
+      
+                <mat-form-field>
+                      <input #input2 matInput placeholder="User Airid"  formControlName="AIRID">
+                      <mat-hint align="end">{{input2.value?.length || 0}}/25</mat-hint>
+                    <mat-error align="end" *ngIf="addForm.controls['AIRID'].invalid && (addForm.controls['AIRID'].touched || addForm.controls['AIRID'].dirty)">
+                        <mat-error *ngIf="addForm.controls['AIRID'].errors.required">{{errors.AIRID.REQUIRED}}</mat-error>
+                        <mat-error *ngIf="addForm.controls['AIRID'].errors.minlength">{{errors.AIRID.MIN}}</mat-error>
+                        <!-- <mat-error *ngIf="addForm.controls['AIRID'].errors.maxlength">{{errors.AIRID.MAX}}</mat-error> -->
+                        <mat-error *ngIf="addForm.controls['AIRID'].errors.pattern">{{errors.AIRID.PATTERN}}</mat-error>   
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input #input2 matInput placeholder="User ID"  formControlName="ID">
+                    <mat-hint align="end">{{input2.value?.length || 0}}/25</mat-hint>
+                  <mat-error align="end" *ngIf="addForm.controls['ID'].invalid && (addForm.controls['ID'].touched || addForm.controls['ID'].dirty)">
+                      <mat-error *ngIf="addForm.controls['ID'].errors.required">{{errors.ID.REQUIRED}}</mat-error>
+                      <mat-error *ngIf="addForm.controls['ID'].errors.minlength">{{errors.ID.MIN}}</mat-error>
+                      <!-- <mat-error *ngIf="addForm.controls['AIRID'].errors.maxlength">{{errors.AIRID.MAX}}</mat-error> -->
+                      <mat-error *ngIf="addForm.controls['ID'].errors.pattern">{{errors.ID.PATTERN}}</mat-error>   
+                  </mat-error>
+              </mat-form-field>
+      
+                <mat-form-field>
+                    <mat-select placeholder="User Access" formControlName="ACCESS">
+                      <mat-option value="Super Administrator">Super Administrator</mat-option>
+                      <mat-option value="Project Administrator">Project Administrator</mat-option>
+                      <!-- <mat-option value="Client Application">Client Application</mat-option> -->
+                    </mat-select>
+                    <mat-error align="end" *ngIf="!addForm.controls['ACCESS'].valid && addForm.controls['ACCESS'].touched">
+                        <mat-error *ngIf="addForm.controls['ACCESS'].errors.required">{{errors.ACCESS.REQUIRED}}</mat-error>   
+                    </mat-error>
+                </mat-form-field>
+                
+                
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker1" placeholder="Access Expiration Date"  formControlName="EXPIRY_DATE" readonly>
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                    <mat-hint align="end">Ex. 8/16/1990</mat-hint>
+                    <mat-error align="end" *ngIf="!addForm.controls['EXPIRY_DATE'].valid && addForm.controls['EXPIRY_DATE'].touched">
+                        <mat-error *ngIf="addForm.controls['EXPIRY_DATE'].errors.required">{{errors.EXPIRY_DATE.REQUIRED}}</mat-error>
+                        <!-- <mat-error *ngIf="addForm.controls['EXPIRY_DATE'].errors.minlength">{{errors.EXPIRY_DATE.MIN}}</mat-error>
+                        <mat-error *ngIf="addForm.controls['EXPIRY_DATE'].errors.maxlength">{{errors.EXPIRY_DATE.MAX}}</mat-error>
+                        <mat-error *ngIf="addForm.controls['EXPIRY_DATE'].errors.pattern">{{errors.EXPIRY_DATE.PATTERN}}</mat-error>    -->
+                    </mat-error>
+                </mat-form-field>
+                
+                  <mat-form-field>
+                      <mat-select placeholder="Access Status" formControlName="STATUS">
+                        <mat-option value="Active">Active</mat-option>
+                        <mat-option value="Inactive">In Active</mat-option>
+                      </mat-select>
+                      <mat-error align="end" *ngIf="!addForm.controls['STATUS'].valid && addForm.controls['STATUS'].touched">
+                        <mat-error *ngIf="addForm.controls['STATUS'].errors.required">{{errors.STATUS.REQUIRED}}</mat-error>   
+                    </mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <mat-select placeholder="Toppings" [formControl]="toppings" multiple>
+                      <mat-select-trigger>
+                        {{toppings.value ? toppings.value[0] : ''}}
+                        <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+                          (+{{toppings.value.length - 1}} others)
+                        </span>
+                      </mat-select-trigger>
+                      <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+              </div>
+        </mat-dialog-content>
+        <hr>
+        <mat-dialog-actions>
+                <button mat-raised-button color="primary" [disabled]="addForm.invalid  && formDir.submitted" >Submit</button>
+                <a (click)="onClosedConfirm()">Cancel</a>
+        </mat-dialog-actions>
+      </form>
+</div>

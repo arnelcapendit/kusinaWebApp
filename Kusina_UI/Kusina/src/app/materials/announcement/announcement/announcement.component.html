@@ -1,0 +1,22 @@
+<div class="announcement-box-container">
+    <mat-list class="announcement-box-card">
+        <mat-list-item class="list-header">
+            <h4>Recent Announcements</h4>
+        </mat-list-item>
+        <mat-divider color="primary"></mat-divider> 
+        <mat-list-item mat-button class="sidenave-items" [style.background-color]="data.READ_STATUS === '0' ? '#111' : ''" *ngFor="let data of title;" (click)="viewContent(data)">
+            <h3 matLine> {{data.TITLE}} </h3>
+            <!-- <p matLine class="announcement-content"> {{ (data.CONTENT.length > 85) ? (data.CONTENT | slice:0:85) + '..': (data.CONTENT) }} </p> -->
+            <p matLine class="announcement-content">
+                <mark class="status" [style.display]="data.READ_STATUS === '0' ? '' : 'none'"></mark>
+                 {{data.CREATED_DATE | countSpanTime}} 
+            </p>
+            <mat-divider ></mat-divider> 
+        </mat-list-item>
+        <mat-list-item mat-button class="sidenave-items sub-header" routerLink="announcements" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+                <h5>View All Announcements</h5>
+                <mat-divider ></mat-divider> 
+        </mat-list-item>
+    </mat-list>
+</div>
+

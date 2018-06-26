@@ -1,0 +1,8 @@
+<div *ngIf="getIsShowLoader()" class="loader" fxLayout="row" fxLayoutGap="5px">
+    <mat-progress-bar
+        [color]="color"
+        [mode]="mode"
+        [value]="value"
+        [bufferValue]="bufferValue">
+    </mat-progress-bar>
+</div>

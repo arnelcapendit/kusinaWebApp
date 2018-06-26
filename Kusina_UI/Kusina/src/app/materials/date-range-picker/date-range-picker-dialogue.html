@@ -1,0 +1,91 @@
+<!-- <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left" fxLayoutGap="2%">
+    <div class="container day" fxFlex="70%" *ngIf="selectedPeriodModel=='Day'">
+        <form #myForms="ngForm" novalidate>
+            <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="2%" >
+                <div class="mydaterange" fxFlex="100%">
+                    <label><strong>Date:</strong> {{dayModel.formatted}}</label>
+                    <my-date-picker fxLayoutAlign="right" name="singleDay" [options]="optionForDay" [(ngModel)]="dayModel" required></my-date-picker>
+                    <small>Max range is 6 months only.</small>
+                </div>
+            </div> 
+        </form>
+    </div>
+    <div class="container custom" fxFlex="80%"  *ngIf="selectedPeriodModel=='Custom'">
+        <form #myForm="ngForm" novalidate>
+            <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left" fxLayoutGap="2%" >
+                <div class="mydaterange" fxFlex="47%">
+                    <label><strong>From:</strong> {{customStartModel.formatted}}</label>
+                    <my-date-picker fxLayoutAlign="right" name="startDate" (dateChanged)="onStartDateChanged($event)" [options]="optionForCustomStart" [(ngModel)]="customStartModel" required></my-date-picker>
+                    <small>Max range is 6 months only.</small>
+                </div>
+                <div class="mydaterange" fxFlex="47%">
+                    <label><strong>To:</strong> {{customEndModel.formatted}}</label>
+                    <my-date-picker fxLayoutAlign="right" name="endDate" (dateChanged)="onEndDateChanged($event)" [options]="optionForCustomEnd"   [(ngModel)]="customEndModel" required></my-date-picker>
+                </div>
+            </div> 
+        </form>
+    </div>
+    <div class="container" fxFlex="20%">
+        <div >
+            <label fxLayout="row" class="daterangelabel"><strong>Period:</strong></label>
+            <mat-radio-group class="datepicker-radio-group" [(ngModel)]="selectedPeriodModel"  >
+                <mat-radio-button class="datepicker-radio-button" *ngFor="let period of periods" [value]="period" (click)="configureDatepicker()">
+                    {{period}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div mat-dialog-actions>
+            <button mat-raised-button color="primary" (click)="applyChanges()" cdkFocusInitial>Apply</button>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+<div class="container clearfix">
+    <div class="container calendar-holder" *ngIf="selectedPeriodModel=='Day'">
+        <form #myForms="ngForm" novalidate>
+            <div class="container">
+                <div class="mydaterange">
+                    <label><strong>Date:</strong> {{dayModel.formatted}}</label>
+                    <my-date-picker name="singleDay" [options]="optionForDay" [(ngModel)]="dayModel" required></my-date-picker>
+                    <small>Max range is 6 months only.</small>
+                </div>
+            </div> 
+        </form>
+    </div>
+    <div class="container calendar-holder"  *ngIf="selectedPeriodModel=='Custom'">
+        <form #myForm="ngForm" novalidate>
+            <div class="container clearfix">
+                <div class="mydaterange float-l">
+                    <label><strong>From:</strong> {{customStartModel.formatted}}</label>
+                    <my-date-picker name="startDate" (dateChanged)="onStartDateChanged($event)" [options]="optionForCustomStart" [(ngModel)]="customStartModel" required></my-date-picker>
+                    <small>Max range is 6 months only.</small>
+                </div>
+                <div class="mydaterange float-l">
+                    <label><strong>To:</strong> {{customEndModel.formatted}}</label>
+                    <my-date-picker name="endDate" (dateChanged)="onEndDateChanged($event)" [options]="optionForCustomEnd"   [(ngModel)]="customEndModel" required></my-date-picker>
+                </div>
+            </div> 
+        </form>
+    </div>
+    <div class="action-holder">
+        <div >
+            <label fxLayout="row" class="daterangelabel"><strong>Period:</strong></label>
+            <mat-radio-group class="datepicker-radio-group" [(ngModel)]="selectedPeriodModel"  >
+                <mat-radio-button class="datepicker-radio-button" *ngFor="let period of periods" [value]="period" (click)="configureDatepicker()">
+                    {{period}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div mat-dialog-actions>
+            <button mat-raised-button color="primary" (click)="applyChanges()" cdkFocusInitial>Apply</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="container detention-container">
+    <p><b>Note:</b> Maximum range of selection is only 6 months.<br> <a href="mailto:CIO.IS.EMO.OPS.Metrics.Operations@accenture.com" target="_top">Contact Us</a> if you need beyond the max range.</p>
+</div>

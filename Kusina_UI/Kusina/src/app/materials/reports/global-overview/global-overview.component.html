@@ -1,0 +1,19 @@
+<div class="cards-container custom-report-container myte-custom-report" fxLayout="column" fxLayoutGap="15px" >
+    <div class="card" fxFlex="60%" fxLayout="column" >
+        <app-loader></app-loader>
+        <mat-tab-group #tabGroup (selectedTabChange)="tabChanged($event)">
+            <mat-tab label="PAGES METRICS">
+                <app-overview-pagemetrics matTabContent *ngIf="tabGroup.selectedIndex === 0"></app-overview-pagemetrics>
+            </mat-tab>
+            <mat-tab label="USER METRICS">
+                <app-overview-usermetrics matTabContent *ngIf="tabGroup.selectedIndex === 1"></app-overview-usermetrics>
+            </mat-tab>
+            <mat-tab label="REFERRERS METRICS">
+                <app-overview-referrersmetrics matTabContent *ngIf="tabGroup.selectedIndex === 2"></app-overview-referrersmetrics>
+            </mat-tab>
+            <mat-tab label="DOWNLOAD METRICS">
+                <app-overview-downloadmetrics matTabContent *ngIf="tabGroup.selectedIndex === 3"></app-overview-downloadmetrics>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div *ngIf="!loadCompleted">
+      <mat-progress-bar class="example-margin" [color]="'accent'"[mode]="'indeterminate'"></mat-progress-bar>
+      <div class="splash">
+            <fa name="spinner" animation="spin"></fa>
+            <h2>Hi there! We are just checking some few things. Please wait for a moment.</h2>
+      </div>
+</div>
+<div [hidden]="!loadCompleted"> 
+<mat-toolbar class="app-navigation"  color="primary" layout="row">
+      <div [hidden]="hideTitle">
+            <button mat-button class="app-title" routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+                  <fa name="area-chart"></fa>
+                  <span>Inframetrics</span>
+            </button>
+      </div>
+      <span class="fill-remaining-space" [hidden]="hideTitle"></span>
+      <app-profile-name-menu #appFilters [hidden]="isHidden"></app-profile-name-menu>
+      <span class="fill-remaining-space"></span>
+      <div class="daterangepicker-container col-sm-4" [hidden]="isHidden" >
+            <app-date-range-picker #dateRangePicker></app-date-range-picker>
+      </div>
+      <div class="icon-container">
+            <app-announcement-icon [hidden]="isHidden" #announcementIcon (click)="toggleSidenav('announcement')" class="app-menu-button-item no-padding" ></app-announcement-icon>
+            <a  [hidden]="isHidden" (click)="toggleSidenav('feedback')" class="app-menu-button app-menu-button-item"> 
+                  <fa name="comments"></fa>
+            </a>
+            <a (click)="toggleSidenav('navigation')" class="app-menu-button app-menu-button-item"> 
+                  <fa name="bars"></fa>
+            </a> 
+      </div>
+</mat-toolbar>
+</div>

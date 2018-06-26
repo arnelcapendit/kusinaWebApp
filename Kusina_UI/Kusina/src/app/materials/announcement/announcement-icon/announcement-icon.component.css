@@ -1,0 +1,36 @@
+.announcement-box{
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    padding: 10px;
+    height: 30px;
+    margin: 0 auto;
+    line-height: 30px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+ }
+
+.announcement-box:hover{
+    background-color: rgba(0,0,0,.12);
+}
+
+.announcement-box:hover mark {
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+}
+
+.announcement-box mark{
+    border-radius: 20px;
+    width: 20px!important;
+    height: 20px!important;
+    background-color: #FF6B6B;
+    position: absolute;
+    left: 20px;
+    font-size: 12px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #FFF;
+    line-height: 21px;
+}

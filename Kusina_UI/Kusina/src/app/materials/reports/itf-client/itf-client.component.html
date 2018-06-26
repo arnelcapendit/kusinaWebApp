@@ -1,0 +1,16 @@
+<div class="cards-container custom-report-container myte-custom-report" fxLayout="column" fxLayoutGap="15px" >
+  <div class="card" fxFlex="60%" fxLayout="column" >
+      <app-loader></app-loader>
+      <mat-tab-group #tabGroup (selectedTabChange)="tabChanged($event)">
+          <mat-tab label="FULFILLMENT CONNECT USAGE">
+                  <app-fulfillment *ngIf="tabGroup.selectedIndex === 0"></app-fulfillment>
+          </mat-tab>
+          <mat-tab label="NOTIFICATION COUNT">
+              <app-notification *ngIf="tabGroup.selectedIndex === 1"></app-notification>
+          </mat-tab>
+          <mat-tab label="COMMENTS CLICK COUNT">
+              <app-comments *ngIf="tabGroup.selectedIndex === 2"></app-comments>
+          </mat-tab>
+      </mat-tab-group>
+  </div>
+</div>

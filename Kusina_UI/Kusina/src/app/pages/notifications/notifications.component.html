@@ -1,0 +1,21 @@
+<div class="cards-container custom-report-container myte-custom-report" fxLayout="column" fxLayoutGap="15px" >
+    <div class="card" fxFlex="60%" fxLayout="column" >
+        <mat-tab-group #tabGroup>
+            <mat-tab label="ANNOUNCEMENTS">
+                <div class="container col-md-12">
+                    <div class="dafaultFont">
+                        <app-table
+                            #notificationArchive
+                            [columns]="displayedColumns" 
+                            [report]="currentReport" 
+                            [placeholder]="searchPlaceholder"
+                            [reportType]="reportType"
+                            [filtered]="filter">
+                        </app-table>
+                    </div>
+                  </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
+

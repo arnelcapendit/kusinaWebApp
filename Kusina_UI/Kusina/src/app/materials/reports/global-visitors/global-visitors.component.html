@@ -1,0 +1,19 @@
+<div class="cards-container custom-report-container myte-custom-report" fxLayout="column" fxLayoutGap="15px" >
+    <div class="card" fxFlex="60%" fxLayout="column" >
+        <mat-tab-group #visitorLogs>
+            <mat-tab label="{{currentReport}}">
+                <div class="container col-md-12">
+                    <div class="dafaultFont">
+                        <app-table-filter 
+                            #visitorsTable 
+                            [columns]="displayedColumns" 
+                            [report]="currentReport" 
+                            [placeholder]="searchPlaceholder"
+                            [reportType]="reportType">
+                        </app-table-filter>
+                    </div>
+                </div>  
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

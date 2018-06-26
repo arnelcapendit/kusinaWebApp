@@ -1,0 +1,34 @@
+.nodataLbl{
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);  */
+    /* to compensate own width and height */
+    
+    /* position: fixed;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 15;
+    top: 30;
+    left: 20; */
+
+    /* position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%); */
+
+    /* position: inherit;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   */
+
+   /* position: fixed; */
+   display: flex;
+   justify-content: center; /* align horizontal */
+   align-items: center; /* align vertical */
+
+}

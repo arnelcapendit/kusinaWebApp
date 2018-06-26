@@ -1,0 +1,49 @@
+
+.feedback-icon-holder {
+    width: 100%;
+}
+
+.feedback-icon-holder a {
+    cursor: pointer;
+}
+
+.feedback-icon-holder:hover {
+    opacity: 1;
+}
+
+.feedback-container {
+    width: 100%;
+}
+.feedback-container .feedback-header {
+    background: #000;
+    padding: 10px 15px;
+    color: #fff;
+}
+
+.feedback-container .feedback-header h4 {
+    margin: 0;
+}
+
+.feedback-container .feedback-content {
+    position: relative;
+    padding: 15px;
+}
+
+.feedback-container .feedback-content .star-rating-container{
+    padding: 0 0 10px;
+    font-size: 40px;
+    color: gold;
+    text-align: center;
+}
+
+.action-btn-holder {
+    text-align: right;
+    margin-top: 15px;
+}
+
+.w100 {
+    width: 100%;
+    color: #fff;
+}
+
+

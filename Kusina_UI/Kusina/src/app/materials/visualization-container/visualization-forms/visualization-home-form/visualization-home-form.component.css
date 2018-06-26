@@ -1,0 +1,61 @@
+.k-list-container{
+    padding: 0;
+}
+.k-list-item{
+    color: #fff;
+    font-family: "Open Sans Regular";
+    font-size: 12px;
+    min-height:48px;
+    height:auto !important;
+}
+.k-list-item:hover{
+    background-color:#333;
+    cursor: pointer;
+}
+
+.k-list-item-container{
+    display:block;
+    height: auto;
+}
+.k-list-item-container h3{
+    font-size: 12px;
+    display: block;
+    
+}
+.k-list-item-container p{
+    font-size: 10px;
+    display: block;
+}
+
+.fa-overlapping{
+    position: relative;
+    padding-right:20px;
+}
+.fa-overlapping fa{
+    font-size: 80px;
+}
+.fa-overlapping fa.chart{
+    font-size: 40px;
+}
+.fa-overlapping label.metrics{
+    position: absolute;
+    top: 28px;
+    left: 17px;
+    font-size: 35px;
+}
+.fa-overlapping label.cards-header{
+    position: absolute;
+    top: 34px;
+    left: 13px;
+    font-size: 10px;
+}
+.fa-overlapping label.cards-content{
+    position: absolute;
+    top: 50px;
+    left: 14px;
+    font-size: 4px;
+    width: 47%;
+}
+.mat-divider{
+    border-top-color:#444;
+}

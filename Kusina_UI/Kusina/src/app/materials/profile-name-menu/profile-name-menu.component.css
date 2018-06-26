@@ -1,0 +1,24 @@
+.application-filter{
+    text-align:center;
+    color: #fff;
+    height:100%;
+    /* width: 20px !important;   */
+    font-family: 'Open Sans Light';
+    padding-top:2px;
+    /* font-size:16px; */
+    /* text-overflow: ellipsis; */
+    font-size:.8em;
+    width: 28em;
+    text-align:left;
+    cursor:pointer;
+    
+}
+.profile-search-icon{
+    padding-left:10px;
+}
+.app-menu button{
+    font-family: 'Open Sans Light';
+}
+.application-filter .fa{
+    padding-left:10px;
+}

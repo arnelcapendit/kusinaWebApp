@@ -1,0 +1,9 @@
+<div [style.top]="configureTop" [style.left]="configureLeft" [style.position]="configurePosition">
+  <div [ngDraggable]="draggable" [bounds]="myBounds" (edge)="checkEdge($event)"  [inBounds]="inBounds" [gridSize]="gridSize2" [zIndex]="100" [preventDefaultEvent]="true" class="card" [style.height]="'auto'" [style.width]="'auto'" [outOfBounds]="outOfBounds" >
+      <app-visualization-metric-option *ngIf="type==='metrics'" [(data)]="metricsData"></app-visualization-metric-option>
+      <app-visualization-card-option *ngIf="type==='card'" [(data)]="cardsData" #card></app-visualization-card-option>
+      <app-visualization-markdown-option *ngIf="type==='markdown'" [(data)]="markdownData"></app-visualization-markdown-option>
+      <app-visualization-highchart-option *ngIf="type==='chart'" [(data)]="highchartData"></app-visualization-highchart-option>
+      <app-visualization-actions [id]="id" *ngIf="state !=='preview'"></app-visualization-actions>
+  </div>
+</div>

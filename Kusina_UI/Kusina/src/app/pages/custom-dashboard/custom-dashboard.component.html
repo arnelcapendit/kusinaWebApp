@@ -1,0 +1,18 @@
+<div class="cards-container" fxLayout="column" fxLayoutGap="15px" >
+  <div #gridContainer class="grid-container" #myBounds [style.height]="'100%'" [style.width]="'100%'" >
+    <!-- Draggable block -->
+    <div #cardsContainer> </div>
+    <!-- Draw grids -->
+    <!-- <div *ngFor="let a of grids">
+      <div *ngFor="let b of grids">
+        <div [ngDraggable]="false" [position]="{x: a, y: b }" [preventDefaultEvent]="true" class="grid">
+
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+  <button [@addAction]='addState' mat-fab color="primary" (click)="addMode()" class="action-buttons-add"><fa name="plus"></fa></button>
+  <button [@saveAction]='editState' mat-fab color="primary" (click)="editMode()" class="action-buttons-edit"><fa name="pencil"></fa></button>
+  <button [@saveAction]='saveState' mat-fab color="primary" (click)="saveChanges()" class="action-buttons-save"><fa name="save"></fa></button>
+</div>

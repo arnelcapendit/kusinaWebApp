@@ -1,0 +1,19 @@
+<div class="remove-form">
+        
+    <h2 mat-dialog-title><i class="fa fa-trash" aria-hidden="true"></i> Remove User Details</h2>
+    <hr>
+    <mat-dialog-content>
+        <p>Are you sure you want to remove this user: <strong>{{data.userDelete}}</strong>?</p>
+        <!-- <p>{{data}}</p> -->
+    </mat-dialog-content>
+    <br>
+    <mat-dialog-actions>
+        <button mat-raised-button color="warn" (click)="removeUser()">Delete</button>
+        <button mat-raised-button (click)="onClosedConfirm()">Cancel</button>
+        <!-- <button type="button" class="btn btn-primary" (click)="removeUserDetails()">Yes</button>
+        <button type="button" class="btn btn-warning" (click)="onClosedCancel()">No</button> -->
+      <!-- <button mat-button mat-dialog-close>No</button> -->
+      <!-- Can optionally provide a result for the closing dialog. -->
+      <!-- <button mat-button [mat-dialog-close]="true">Yes</button> -->
+    </mat-dialog-actions>
+</div>

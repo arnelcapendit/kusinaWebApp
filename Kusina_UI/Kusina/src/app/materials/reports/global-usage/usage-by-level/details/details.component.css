@@ -1,0 +1,15 @@
+mat-toolbar {
+    text-align: right;
+    display: block;
+}
+
+mat-toolbar a {
+    font-size: 25px;
+    padding-top: 8px;
+    display: block;
+    cursor: pointer;
+}
+
+.cards-container{
+    display: block !important;
+  }

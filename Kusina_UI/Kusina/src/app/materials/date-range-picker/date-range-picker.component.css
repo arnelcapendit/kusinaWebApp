@@ -1,0 +1,9 @@
+.datepicker-trigger{
+    height: 100%;
+    color: #fff;
+}
+.datepicker-trigger span{
+    font-family: 'Open Sans Light';
+    padding-left:5px;
+    font-size: 14px;
+}

@@ -1,0 +1,31 @@
+mat-form-field{
+    color:#fff;
+}
+
+.k-metrics *{
+    color:#ddd;
+}
+.k-metrics .k-colorPicker{
+   margin:0;
+   padding: 3px;
+   border:none;
+   width:175px;
+}
+.k-divider{
+    border-top-color:#888;
+}
+.k-conditionalFormatingContainer{
+    height:auto;
+    background:#111 !important;
+    color:#fff;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.k-addRule{
+    color:rgb(0, 133, 18);
+    cursor: pointer;
+}
+
+.k-conditionalFormatingContainer .mat-list-item-content{
+    display:block !important;
+}

@@ -1,0 +1,25 @@
+<div class="cards-container custom-report-container myte-custom-report" fxLayout="column" fxLayoutGap="15px" >
+    <div class="card" fxFlex="60%" fxLayout="column" >
+        <app-loader></app-loader>
+        <mat-tab-group #tabGroup (selectedTabChange)="tabChanged($event)">
+            <mat-tab label="PAGES CUSTOM INFO">
+                    <app-page-custom-info *ngIf="tabGroup.selectedIndex === 0"></app-page-custom-info>
+            </mat-tab>
+            <mat-tab label="GEOGRAPHY BY SEGMENT NAME">
+                <app-geography *ngIf="tabGroup.selectedIndex === 1"></app-geography>
+            </mat-tab>
+            <mat-tab label="CAREERLEVEL BY SEGMENT NAME">
+                <app-career-level *ngIf="tabGroup.selectedIndex === 2"></app-career-level>
+            </mat-tab>
+            <mat-tab label="CAREERTRACKS BY SEGMENTNAME">
+                <app-career-tracks *ngIf="tabGroup.selectedIndex === 3"></app-career-tracks>
+            </mat-tab>
+            <mat-tab label="HITS BY GEOGRAPHY">
+                <app-hits-by-geography *ngIf="tabGroup.selectedIndex === 4"></app-hits-by-geography>
+            </mat-tab>
+            <mat-tab label="HITS BY ASSET">
+                <app-hits-by-asset *ngIf="tabGroup.selectedIndex === 5"></app-hits-by-asset>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

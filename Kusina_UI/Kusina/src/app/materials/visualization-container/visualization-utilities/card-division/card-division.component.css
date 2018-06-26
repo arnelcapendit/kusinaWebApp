@@ -1,0 +1,9 @@
+*{
+    color:#ddd;
+}
+.mat-divider{
+    border-color: #555;
+}
+.close{
+    text-align: right;
+}

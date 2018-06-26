@@ -1,0 +1,27 @@
+<div class="cards-container custom-report-container myte-custom-report" fxLayout="column" fxLayoutGap="15px" >
+    <div class="card" fxFlex="60%" fxLayout="column" >
+        <div class="container col-md-12">
+            <div class="dafaultFont">
+                <mat-toolbar color="primary"><p>{{data.TITLE}}</p><a (click)="onClosed()"><i class="fa fa-window-close"></i></a></mat-toolbar>
+                <div class="content_dialog_container">
+                    <div>
+                      <p><b>Title: </b>{{data.TITLE}}</p>
+                      <p><b>Created Date: </b> {{data.CREATED_DATE}}</p>
+                    </div>
+                    <div>
+                      <p><b>Type: </b>{{data.TYPE}}</p>
+                      <!-- <p><b>Status: </b>{{data.STATUS}}</p> -->
+                    </div>
+                    <div>
+                      <h4>Content:</h4>
+                      <!-- {{data.CONTENT | changeToLink}} -->
+                      <!-- <div [innerHTML]="convertedContent"></div> -->
+                      <!-- <div Markdown> -->
+                          <markdown [innerHTML]="convertedContent"></markdown>
+                      <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="report-menu">
+    <mat-button-toggle-group>
+        <mat-button-toggle
+            (click)="selectedReport(rpt)" 
+            *ngFor="let rpt of customReportList" 
+            [value]="rpt"
+            [checked]="customReportList.indexOf(rpt)==0" >
+            {{ rpt }}
+        </mat-button-toggle>
+    </mat-button-toggle-group>
+</div>

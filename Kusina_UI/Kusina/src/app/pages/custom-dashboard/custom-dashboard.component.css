@@ -1,0 +1,44 @@
+.cards-container{
+    padding-top:50px;
+}
+.grid-container {
+    position: relative;
+    /* height: 400px;
+    width: 400px; */
+}
+.drag-grid, .grid {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    line-height: 50px;
+    text-align: center;
+}
+.grid {
+    background-color: #20c997;
+    border: 1px dashed #067002;
+    
+}
+.drag-grid {
+    background-color: #f8cb00;
+}
+
+.action-buttons-edit{
+    position:fixed;
+    z-index: 2;
+    right:15px;
+    bottom:15px;
+}
+.action-buttons-add{
+    position:fixed;
+    z-index: 2;
+    right:15px;
+    bottom:70px;
+}
+.action-buttons-save{
+    display:none;
+    position:fixed;
+    z-index: 2;
+    right:15px;
+    bottom:15px;
+}

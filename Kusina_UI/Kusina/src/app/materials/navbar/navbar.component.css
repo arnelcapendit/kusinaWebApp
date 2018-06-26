@@ -1,0 +1,77 @@
+.app-navigation{
+    background-color:#3f51b5;
+    box-shadow:0 1px 10px 1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,.2), 0 0px 0px 0 rgba(0,0,0,.5);
+    position: fixed;
+    top: 1;
+    z-index: 2000;
+    padding-left:0;
+  }
+  .app-navigation  *{
+    height:100%;
+  }
+
+  .app-navigation button fa{
+    font-size: 16px;
+  }
+
+  .app-menu-button{
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    line-height: 30px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+ }
+
+.app-menu-button:hover{
+    background-color: rgba(0,0,0,.12);
+}
+
+
+  .fill-remaining-space {
+    flex: 1 1 auto;
+  }
+  .daterangepicker-container{
+    padding-top:30px;
+    padding-right:10px;
+    margin-bottom: 13px;
+  }
+  app-profile-name-menu:hover{
+    background-color: rgba(0,0,0,.12);
+  }
+  .app-title{
+    font-family: 'Open Sans Light';
+  }
+  .app-menu-button-item{
+    padding:15px;
+    position: relative;
+    top: 10px;
+    right:10px;
+    font-size: 16px;
+    width:50px;
+  }
+  .no-padding{
+    padding: 0 !important;
+  }
+
+
+.splash{
+  margin:0 auto;
+  height:100px;
+  width: 450px;
+  padding-top: 100px;
+  position: relative;
+  text-align: center;
+
+}
+
+.splash fa{
+  font-size: 100px;
+  color:rgba(68, 164, 248,0.8);
+}
+ 

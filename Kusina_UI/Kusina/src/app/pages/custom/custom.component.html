@@ -1,0 +1,9 @@
+    <app-toggle-button [(category)]="selectedCategory" #toggleButton></app-toggle-button>
+    <app-myte-client *ngIf="ifMyTEClient()"></app-myte-client>
+    <app-aibsp-client *ngIf="ifAibspClient()"></app-aibsp-client>
+    <app-itf-client *ngIf="ifITFClient()"></app-itf-client>
+    <app-global-overview *ngIf="ifOverview()"></app-global-overview>
+    <app-global-usage *ngIf="ifUsage()"></app-global-usage>
+    <app-global-visitors *ngIf="ifVisitors()"></app-global-visitors>
+    <app-global-actions *ngIf="ifActions()"></app-global-actions>
+    <app-global-pages *ngIf="ifPages()"></app-global-pages>

@@ -1,0 +1,18 @@
+<div class="k-addComponent-container">
+  <mat-list class="k-list-container">
+      <mat-list-item class="k-list-header"> 
+          <div class="k-list-item-container" *ngIf="visualization==='home'">
+              <h3>Add Visualizations</h3>
+          </div>
+          <div class="k-list-item-container" *ngIf="visualization!=='home'">
+              <fa name="angle-left" class="k-backToHome" (click)="changeSelection('home')" ></fa>
+              <h3>Create {{visualization}}</h3>
+          </div>
+      </mat-list-item>
+  </mat-list>
+  <app-visualization-home-form [hidden]="!(visualization==='home')" [(visualization)]="visualization"></app-visualization-home-form>
+  <app-visualization-metric-form [hidden]="!(visualization==='metrics')"></app-visualization-metric-form>
+  <app-visualization-cards-form [hidden]="!(visualization==='card')"></app-visualization-cards-form>
+  <app-visualization-markdown-form [hidden]="!(visualization==='markdown')"></app-visualization-markdown-form>
+  <app-visualization-highchart-form [hidden]="!(visualization==='chart')"></app-visualization-highchart-form>
+</div>

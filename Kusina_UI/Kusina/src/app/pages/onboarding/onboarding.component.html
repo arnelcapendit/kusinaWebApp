@@ -1,0 +1,77 @@
+<div [hidden]="!acceptedDataPrivacy">
+<div class="cards-container" fxLayout="column" fxLayoutGap="15px" >
+    <div class="block-0">
+        <h2>You are not onboarded in Inframetrics.</h2>
+        <p>
+          You might be seeing this page because you don't have enough permission to access this application.
+        </p>
+      </div>
+  <div class="block-1">
+    <div class="circle-container">
+        <fa name="area-chart"></fa>
+    </div>
+    <h2>Who are we?</h2>
+    <p>
+      InfraMetrics supports CIO’s web analytics services. We let you track near real time key performance indicators such as visits, downloads, keywords, and many more.
+      We also let you track your application's performance in CIO NOW (App 358 – 3 mostly used page, 5 commonly used page and 8 rarely used page) once your application is onboarded to us. 
+    </p>
+  </div>
+ 
+  <div class="block-3">
+    <div class="chart-container">
+      <fa name="pie-chart" class="icon-1"></fa>
+      <fa name="line-chart" class="icon-2"></fa>
+      <fa name="bar-chart" class="icon-3"></fa>
+      <fa name="table" class="icon-4"></fa>
+    </div>
+    <div class="left-content">
+      <h2>How to avail our services?</h2>
+      <p>We can have a quick discussion with your team on your current analytics/reporting needs that our tool may be able to provide or other use cases that you may require in the future. </p>
+      <button mat-raised-button color="primary" (click)="goToUrl()">Contact Us</button>
+    </div>
+  </div>
+  <div class="block-2">
+      <ngu-carousel
+        [inputs]="carouselOne"
+        (carouselLoad)="myfunc($event)">
+          <ngu-item NguCarouselItem>
+            <div class="services-image" width="50%">
+              <img [src]="grafana" width ='100%'>
+            </div>
+            <div class="services-description">
+              <h2>Grafana</h2>
+              <p>Grafana is open platform for data analytics and monitoring purpose dashboard and graph composer which runs as a web application.
+                  It is a frontend for creating queries and storing dashboards using data from Graphite and other data sources.
+              </p>
+            </div>
+          </ngu-item>
+          <ngu-item NguCarouselItem>
+              <div class="services-image" width="50%">
+                  <img [src]="inframetrics" width ='100%'>
+                </div>
+                <div class="services-description">
+                  <h2>Inframetrics - new UI</h2>
+                  <p>
+                    This is our custom tool with brand new user interface that aims to give you near-real-time data for your web metrics. Soon, This tool also aims to have a self service functionality.
+                  </p>
+                </div>
+          </ngu-item>
+          <ngu-item NguCarouselItem>
+              <div class="services-image" width="50%">
+                  <img [src]="app358" width ='100%'>
+                </div>
+                <div class="services-description">
+                  <h2>Performance Monitoring</h2>
+                  <p>
+                      CIO Performance Monitoring also known as the “App 3/5/8” model, in which the response time are measured using both the server and the end user. 
+                      Pages visited by 80% of all users should load in under 3 seconds (mostly used page), Pages used commonly should load in under 5 seconds, and Pages used rarely, by support staff, or reports should load in under 8 seconds                      
+                  </p>
+                </div>
+          </ngu-item>
+          <button NguCarouselPrev mat-mini-fab color="primary" class='leftRs carousel-left'>&lt;</button>
+          <button NguCarouselNext mat-mini-fab color="primary" class='rightRs carousel-right'>&gt;</button>
+        </ngu-carousel>
+  </div>
+
+</div>
+</div>

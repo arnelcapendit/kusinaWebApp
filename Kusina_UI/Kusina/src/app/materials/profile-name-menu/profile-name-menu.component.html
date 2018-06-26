@@ -1,0 +1,14 @@
+
+<div [style.width.px]="styleWidth" [style.overflow]="'hidden'">
+<form class="profile-filter-form">
+  <mat-form-field class="application-filter" >
+    <fa name="search" class="profile-search-icon"></fa>
+    <input (click)= "dropAllApp()" type="text" placeholder="Search a profile" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option (click)="selectApp(option)" *ngFor="let option of filteredOptions | async" [value]="option.formattedValue">
+        {{ option.formattedValue }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+</div>

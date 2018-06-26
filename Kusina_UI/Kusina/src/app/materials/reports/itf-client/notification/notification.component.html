@@ -1,0 +1,12 @@
+<div class="container col-md-12">
+  <div class="dafaultFont">
+      <app-table-filter
+          #notification 
+          [columns]="displayedColumns" 
+          [report]="currentReport" 
+          [placeholder]="searchPlaceholder"
+          [reportType]="reportType"
+          [filtered]="filter">
+      </app-table-filter>
+  </div>
+</div>

@@ -1,0 +1,291 @@
+/* You can add global styles to this file, and also import other style files */
+/*@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";*/
+@import "~font-awesome/css/font-awesome.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import 'prismjs/themes/prism-okaidia.css';
+
+
+@font-face {
+    font-family: 'Open Sans Regular';
+    font-style: normal;
+    src: url('assets/fonts/opensans/OpenSans-Regular.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Open Sans Light';
+    font-style: normal;
+    src: url('assets/fonts/opensans/OpenSans-Light.ttf');
+  }
+  html, body, material-app, mat-sidenav-container {
+    margin:0;
+    padding:0;
+    font-family: 'Open Sans Light';
+    width: 100%;
+    height: 100%;
+    background-color:#e4e4e4 !important ;
+  }
+  body{
+    overflow: hidden;
+  }
+
+.mat-toolbar-row, .mat-toolbar-single-row{
+  height: 50px !important;
+}
+/* .table tr th {
+  cursor: pointer !important;
+} */
+
+.profile-filter-form .mat-form-field-underline{
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.profile-filter-form .mat-form-field-infix{
+  padding-top:0px !important;
+}
+.profile-filter-form .mat-form-field-label{
+    color:#fff !important;
+    top:auto !important;
+}
+
+.profile-filter-form .mat-form-field-should-float .mat-form-field-label{
+    color:#3f51b5 !important;
+}
+.profile-filter-form .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,.profile-filter-form .mat-form-field-empty.mat-form-field-label{
+  margin-left: 40px;
+  width:408px;
+  padding-top:3px;
+  font-size:14px;
+  text-align:center;
+}
+.profile-filter-form .mat-input-element{
+  padding-left: 12px;
+  font-size:14px;
+  width:408px;
+  text-overflow: ellipsis;
+}
+
+.ngx-daterangepicker .calendar .calendar-container .days{
+  display: block !important;
+  width:240px !important;
+}
+.ngx-daterangepicker .input-section .label-txt, .ngx-daterangepicker .input-section .value-txt{
+  display: inline !important;
+}
+.ngx-daterangepicker{
+  height:43px !important;
+  border: none !important;
+}
+.daterangepicker-container{
+  padding-top:10px !important;
+  font-family: 'Open Sans Light';
+}
+.ngx-daterangepicker .input-section{
+  height:43px !important;
+}
+.ngx-daterangepicker .input-section .cal-icon{
+  bottom:2px !important;
+}
+
+.ngx-daterangepicker .input-section{
+  padding:4px 10px !important;
+  width:calc(99%/2) !important;
+}
+
+.ngx-daterangepicker .calendar .calendar-container .day-names{
+  margin-top: 15px !important;
+  margin-bottom: 0px !important;
+}
+.ngx-daterangepicker .input-section .label-txt{
+  text-transform: uppercase;
+  font-size:12px !important;
+  color:#3f51b5 !important;
+}
+
+.ngx-daterangepicker .calendar .calendar-container .days .day .day-num{
+  padding:0px !important;
+}
+
+.ngx-daterangepicker .calendar .calendar-container .days .day .day-num{
+  width:calc(240px/7) !important;
+}
+.ngx-daterangepicker .calendar .calendar-container .days .day{
+  width:calc(240px/7) !important;
+}
+.ngx-daterangepicker .calendar .calendar-container .day-names .day-name{
+  width:calc(240px/7) !important;
+}
+
+.ngx-daterangepicker .calendar .calendar-container{
+  padding:10px !important;
+  width: 260px !important;
+}
+.ngx-daterangepicker .calendar .calendar-container .controls .control-title{
+  z-index: 1 !important;
+}
+
+.ngx-daterangepicker .calendar{
+  width: 395px !important;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  background-color: #fff;
+  margin-top: 5px;
+  border: none !important;
+  top:60px !important;
+}
+.ngx-daterangepicker .calendar .side-container{
+  min-height: auto !important;
+  width:128px !important;
+}
+.ngx-daterangepicker .calendar .arrow{
+  min-width: 20px !important;
+  min-height: 20px !important;
+  top: -10px !important;
+  border: none !important
+}
+.ngx-daterangepicker .calendar .side-container .side-container-buttons .side-button{
+  height:40px !important;
+  width: 117px !important;
+}
+
+
+
+.mydaterange .weekdaytitle,
+.mydaterange .monthinput,
+.mydaterange .yearinput,
+.mydaterange .titleareatxt,
+.mydaterange .selection,
+.mydaterange .daycell .datevalue span,
+.mydaterange .caltable,
+.mydaterange .monthtable, 
+.mydaterange .yeartable {
+  font-family: 'Open Sans Light' !important;
+}
+.mydaterange .headerlabelbtn {
+  font-family: 'Open Sans Regular' !important;
+}
+
+.mydaterange, .mydaterange .headerclearbtn, .mydaterange .headerokbtn{
+  border:0 !important;
+}
+
+/*
+.mydaterange .selectorarrow, 
+.mydaterange .selector{
+  border:0 !important;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}*/
+
+.mydaterange .mydp .btnclear,
+.mydaterange .mydp .btnpicker, 
+.mydaterange .mydp .headerbtn, 
+.mydaterange .mydp .headerclearbtn, 
+.mydaterange .mydp .headermonthtxt, 
+.mydaterange .mydp .headerokbtn, 
+.mydaterange .mydp .headeryeartxt, 
+.mydaterange .mydp .yearchangebtn{
+  color:#666 !important;
+}
+.mydaterange .mydp .weekdaytitle{
+  background-color: #f8f8f8 !important;
+  font-weight: bold !important;
+  text-transform:uppercase !important;
+}
+.mydaterange .mydp .nextmonth, .mydaterange .prevmonth{
+  color:#ccc !important;
+}
+
+.mydaterange .mydp .currmonth{
+  background-color: rgba(0,0,0,0)!important;
+}
+.mydaterange .mydp .selectedday .datevalue, .mydp .selectedmonth .monthvalue, .mydp .selectedyear .yearvalue{
+  background-color: #6071C7!important;
+  color:#fff !important;
+}
+.mydaterange .mydp .disabled{
+  background-color: #f7f7f7 !important;
+}
+.mydaterange .mydp {
+  padding-top:10px;
+}
+.mat-option-text{
+  font-size:12px !important;
+}
+
+.table-filter .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,.table-filter .mat-form-field-empty.mat-form-field-label {
+  padding-left:5px !important;
+}
+
+.table-filter .mat-form-field{
+  width:450px !important;
+  font-family: 'Open Sans Light';
+  padding-left:5px;
+}
+.custom-table{
+  font-family: 'Open Sans Light';
+}
+.custom-table .mat-header-row .mat-header-cell {
+  font-weight:900;
+}
+.custom-table .mat-header-row .mat-header-cell .mat-sort-header-button{
+  text-transform: uppercase !important;
+  
+}
+.report-menu .mat-button-toggle-group{
+  background-color: #FFF;
+  font-size:12px;
+}
+
+.custom-report-container .mat-tab-label{ 
+  font-size:12px;
+}
+
+
+.mat-cell, .mat-header-cell{
+  min-width: 150px;
+}
+
+.view-dialog .mat-dialog-container {
+  padding: 0;
+}
+
+.ngucarousel-inner{
+  height:300px !important;
+}
+.ngucarouselPointDefault{
+  top: -50px !important;
+  position: relative !important;
+  z-index: 100000 !important;
+}
+
+
+.feedback-content .mat-select-value {
+  color: #fff!important;
+}
+
+.feedback-content .mat-form-field-infix {
+  border-bottom: 1px solid #fff!important;
+}
+
+.feedback-content .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label, .feedback-content .mat-form-field-empty.mat-form-field-label {
+  color: #fff;
+}
+
+.k-metrics .mat-form-field-label, .k-metrics .mat-select-arrow, .k-conditionalFormatingContainer{
+  color:#ddd;
+}
+.k-metrics > mat-list > mat-list-item > div > mat-form-field > div > div.mat-input-underline.mat-form-field-underline{
+  background-color:#ddd !important;
+}
+.k-metrics div.mat-form-field-underline{
+  background-color:#ddd !important;
+}
+.k-metrics .mat-select-value-text {
+  color:#ddd;
+}
+
+.k-conditionalFormatingContainer .mat-list-item-content{
+  display:block !important;
+}
+
+.k-card-form-container .mat-divider{
+  border-color: #555;
+}

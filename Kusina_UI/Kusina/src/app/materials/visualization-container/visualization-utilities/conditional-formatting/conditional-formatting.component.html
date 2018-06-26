@@ -1,0 +1,18 @@
+<div matLine>
+    <label matLine class="close"><fa name="times" (click)="deleteItem()"></fa></label>
+    <input class="k-conditionalFormat " [value]="data.background" [(colorPicker)]="data.background" [style.background]="data.background" [cpPositionOffset]="'0%'" [cpPosition]="'bottom'" [cpWidth]="'190px'" (colorPickerChange)="formChanged()" (cpFallbackColor)="'#ffffff'"/>
+    <mat-form-field class="example-full-width" [style.width]="'50px'"> 
+      <mat-select placeholder="Operator" [(value)]="data.logic" (change)="formChanged()">
+        <mat-option value="<"><</mat-option>
+        <mat-option value=">">></mat-option>
+        <mat-option value="<="><=</mat-option>
+        <mat-option value=">=">>=</mat-option>
+        <mat-option value="<>"><></mat-option>
+        <mat-option value="=">=</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field [style.width]="'50px'">
+      <input matInput placeholder="Value" [(ngModel)]="data.compareTo" (ngModelChange)="formChanged()"/>
+    </mat-form-field>
+   
+</div>

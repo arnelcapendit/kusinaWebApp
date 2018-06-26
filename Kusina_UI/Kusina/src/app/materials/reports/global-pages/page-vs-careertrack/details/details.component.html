@@ -1,0 +1,19 @@
+<div class="cards-container custom-report-container myte-custom-report" fxLayout="column" fxLayoutGap="15px" >
+    <div class="card" fxFlex="60%" fxLayout="column" >
+        <div class="container col-md-12">
+            <div class="dafaultFont">
+                <mat-toolbar color="primary"><a (click)="onClosed()"><i class="fa fa-window-close"></i></a></mat-toolbar>
+                <app-table-filter 
+                    #detailsPageVsCareertracks 
+                    [columns]="displayedColumns" 
+                    [report]="currentReport" 
+                    [reportType]="reportType"
+                    [filtered]="filter"
+                    [uniqueParam]="currentParam" 
+                    [placeholder]="searchPlaceholder">
+                </app-table-filter>
+            </div>
+        </div>  
+    </div>
+</div>
+  

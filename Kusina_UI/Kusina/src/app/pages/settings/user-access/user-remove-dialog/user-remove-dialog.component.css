@@ -1,0 +1,9 @@
+/* mat-dialog-actions button{
+    padding: 10px;
+    margin-right: 10px;
+    width: 100px;
+  } */
+
+  mat-dialog-title .fa fa-trash{
+      font-size: 25px;
+  }

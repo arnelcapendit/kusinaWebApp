@@ -1,0 +1,77 @@
+<div *ngIf="isShow">
+  <div class="cards-container custom-report-container myte-custom-report" fxLayout="column" fxLayoutGap="15px" >
+      <div class="card" fxFlex="60%" fxLayout="column" >
+          <div class="container col-md-12">
+              <div class="dafaultFont">
+                  <mat-toolbar color="primary"><p>{{catName}}</p><a (click)="onClosed()"><i class="fa fa-window-close"></i></a></mat-toolbar>
+                  <div class="content_dialog_container">
+                      <form class="announcement-form" [formGroup] ="announcementForm" (ngSubmit)="submitForm(announcementForm.value)" #formDir="ngForm" novalidate >
+                          <mat-form-field appearance="outline" class="announcement-full-width">
+                            <input matInput placeholder="Title" formControlName="title" required>
+                            <mat-error align="end" *ngIf="announcementForm.controls['title']?.invalid && announcementForm.controls['title']?.errors.required">{{errors.title.REQUIRED}}</mat-error>
+                            <mat-error align="end" *ngIf="announcementForm.controls['title']?.invalid && announcementForm.controls['title']?.errors.pattern">{{errors.title.PATTERN}}</mat-error>
+                          </mat-form-field>
+                      
+                          <mat-form-field class="announcement-full-width">
+                            <input matInput [matDatepicker]="picker" placeholder="Due Date" formControlName="dueDate" required readonly>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                            <mat-error align="end" *ngIf="announcementForm.controls['dueDate']?.invalid && announcementForm.controls['dueDate']?.errors.required">{{errors.dueDate.REQUIRED}}</mat-error>
+                          </mat-form-field>
+                          
+                          <mat-form-field class="announcement-full-width">
+                            <mat-select placeholder="Type" formControlName="type" required>
+                              <mat-option *ngFor="let type of types" [value]="type.value">
+                                {{ type.viewValue }}
+                              </mat-option>
+                            </mat-select>
+                            <mat-error align="end" *ngIf="announcementForm.controls['type']?.invalid && announcementForm.controls['type']?.errors.required">{{errors.type.REQUIRED}}</mat-error>
+                          </mat-form-field>
+                      
+                          <mat-form-field class="announcement-full-width">
+                            <mat-select placeholder="Status" formControlName="status" required>
+                              <mat-option *ngFor="let stat of status" [value]="stat.value">
+                                {{ stat.viewValue }}
+                              </mat-option>
+                            </mat-select>
+                            <mat-error align="end" *ngIf="announcementForm.controls['status']?.invalid && announcementForm.controls['status']?.errors.required">{{errors.status.REQUIRED}}</mat-error>
+                          </mat-form-field>
+                      
+                          <mat-form-field class="announcement-full-width">
+                            <textarea 
+                                matInput 
+                                placeholder="Content"
+                                matTextareaAutosize 
+                                matAutosizeMinRows="7"
+                                matAutosizeMaxRows="7"
+                                required
+                                formControlName="content"
+                              ></textarea>
+                              <mat-error align="end" *ngIf="announcementForm.controls['content']?.invalid && announcementForm.controls['content']?.errors.required">{{errors.content.REQUIRED}}</mat-error>
+                              <mat-error align="end" *ngIf="announcementForm.controls['content']?.invalid && announcementForm.controls['content']?.errors.pattern">{{errors.content.PATTERN}}</mat-error>
+                          </mat-form-field>
+                          
+                          <button mat-raised-button color="primary" [disabled]="announcementForm.invalid  && formDir.submitted">Submit</button>
+                        </form>
+                  </div>
+              </div>
+          </div>  
+      </div>
+    </div>
+</div>
+<div *ngIf="!isShow">
+  <div class="cards-container custom-report-container myte-custom-report" fxLayout="column" fxLayoutGap="15px" >
+    <div class="card" fxFlex="60%" fxLayout="column" >
+        <div class="container col-md-12">
+            <div class="dafaultFont">
+                <mat-toolbar color="primary"><p>{{catName}}</p><a (click)="onClosed()"><i class="fa fa-window-close"></i></a></mat-toolbar>
+                <div class="content_dialog_container">
+                  <h4>Do you want to delete this item?</h4>
+                  <button mat-raised-button (click)="deleteData()" color="warn">Delete</button>
+                  <button mat-raised-button (click)="onClosed()">Cancel</button>
+                </div>
+            </div>
+        </div>  
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  a {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: 0;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    text-align: center;
+    margin: 0;
+    min-width: 88px;
+    line-height: 36px;
+    padding: 0 16px;
+    border-radius: 2px;
+    background-color: #f44336;
+    margin-left: 5px;
+    color: #fff;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  /* .example-container > * {
+    width: 100%;
+  } */
+
+  /* mat-dialog-actions button{
+    padding: 10px;
+    margin-right: 10px;
+    width: 100px;
+  } */
+
+  /* .alert {
+    padding: 1.5px;
+    font-size: .9em;
+    margin-bottom: 2px;
+    display: inline-block;
+    animation: 2s alertAnim forwards;
+  } */

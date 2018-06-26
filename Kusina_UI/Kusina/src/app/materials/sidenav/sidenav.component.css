@@ -1,0 +1,60 @@
+mat-sidenav{
+    width:auto;
+    background-color:#222 !important;
+}
+mat-list-item{
+    color:#fefefe !important;
+    font-family: 'Open Sans Light';
+}
+.sidenav-navigation{
+    width:200px;
+}
+
+.sidenav-feedback {
+    width:400px;
+}
+
+.w100 {
+    color: #fff;   
+}
+
+
+.header-image {
+    background-image: url('http://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+.user-info{
+    text-align:center;
+    color:#fefefe;
+    padding:20px 0px;
+    background-color:#333;
+}
+
+.user-info .user-image{
+    font-size:50px;
+}
+.sidenave-items{
+    padding-top:0;
+    cursor:pointer;
+}
+.sidenave-items mat-list-item{
+    outline: none;
+    -moz-transition: background .3s ease-in;
+    -o-transition: background .3s ease-in;
+    -webkit-transition: background .3s ease-in;
+    transition: background .3s ease-in;
+}
+
+.sidenave-items mat-list-item:hover{
+    background: #1C1C1C;
+}
+
+.active-link{
+    outline: none; 
+    background-color:#111;
+}
+
+.feedBack {
+    width:400px;
+    padding: 24px;
+}

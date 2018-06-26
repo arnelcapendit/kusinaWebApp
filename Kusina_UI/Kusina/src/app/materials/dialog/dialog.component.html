@@ -1,0 +1,29 @@
+<div [ngSwitch]="selectedCategory">
+    <app-details *ngSwitchCase="'PAGES VS USER'" [uniqueParam]="uniqueParam"></app-details>
+    <app-geography-details *ngSwitchCase="'PAGES VS GEOGRAPHY'" [uniqueParam]="uniqueParam"></app-geography-details>
+    <app-careertrack-details *ngSwitchCase="'PAGES VS CAREERTRACKS'" [uniqueParam]="uniqueParam"></app-careertrack-details>
+    <app-level-details *ngSwitchCase="'PAGES VS LEVEL'" [uniqueParam]="uniqueParam"></app-level-details>
+    
+    <app-user-form *ngSwitchCase="'add-user'" [setData]="getData" [category]="selectedCategory"></app-user-form>
+    <app-user-form *ngSwitchCase="'edit-user'" [setData]="getData" [category]="selectedCategory"></app-user-form>
+    <app-user-form *ngSwitchCase="'delete-user'" [setData]="getData" [category]="selectedCategory"></app-user-form>
+
+    <app-announcement-form *ngSwitchCase="'add-announcement'" [setData]="getData" [category]="selectedCategory"></app-announcement-form>
+    <app-announcement-form *ngSwitchCase="'edit-announcement'" [setData]="getData" [category]="selectedCategory"></app-announcement-form>
+    <app-announcement-form *ngSwitchCase="'delete-announcement'" [setData]="getData" [category]="selectedCategory"></app-announcement-form>
+
+    <app-profile-forms *ngSwitchCase="'add-profile'" [setData]="getData" [category]="selectedCategory"></app-profile-forms>
+    <app-profile-forms *ngSwitchCase="'edit-profile'" [setData]="getData" [category]="selectedCategory"></app-profile-forms>
+    <app-profile-forms *ngSwitchCase="'delete-profile'" [setData]="getData" [category]="selectedCategory"></app-profile-forms>
+
+    <app-notification-details *ngSwitchCase="'notification-details'" [setData]="getData"></app-notification-details>
+
+    <app-usage-by-geography-details *ngSwitchCase="'USAGE BY GEOGRAPHY'" [uniqueParam]="uniqueParam"></app-usage-by-geography-details>
+    <app-usage-by-level-details *ngSwitchCase="'USAGE BY LEVEL'" [uniqueParam]="uniqueParam"></app-usage-by-level-details>
+    <app-usage-by-careertrack-details *ngSwitchCase="'USAGE BY CAREERTRACKS'" [uniqueParam]="uniqueParam"></app-usage-by-careertrack-details>
+    <app-details-visitor *ngSwitchCase="'VISITOR LOGS'" [uniqueParam]="uniqueParam"></app-details-visitor>
+    <app-referrers-details *ngSwitchCase="'REFERRERS METRICS'" [uniqueParam]="uniqueParam"></app-referrers-details>
+    <app-download-details *ngSwitchCase="'DOWNLOAD METRICS'" [uniqueParam]="uniqueParam"></app-download-details>
+
+    <app-data-privacy *ngSwitchCase="'data-privacy'" (onConfirmed)="closeDialogue($event)"></app-data-privacy>
+</div>
